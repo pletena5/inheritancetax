@@ -14,27 +14,29 @@ public class InheritanceTax {
         int minimum = sorted[0];
         int temp;
         int location = 0;
+      boolean swap = false;
 
         for (int i = 0; i < sorted.length; i++){
-            minimum = 0;
+            minimum = sorted[i];
 
-            for (int j = 0; j < sorted.length - i; j++){
+            for (int j = 0 + i; j < sorted.length; j++){
 
                 if (sorted[j] < minimum){
 
-                    minimum = sorted[j];
-                    location = j;
+                  minimum = sorted[j];
+                  location = j;
+                  swap = true;
 
                 }// if statement
 
             }// for j < sorted length
 
+          if (swap == true){
             temp = sorted[i];
             sorted[i] = minimum;
             sorted[location] = temp;
-            display();
-            System.out.println(" ");
 
+          }
         }// for i < sorted length
 
     }// subprogramme sort
