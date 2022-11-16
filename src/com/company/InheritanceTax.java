@@ -14,12 +14,16 @@ public class InheritanceTax {
         int minimum = sorted[0];
         int temp;
         int location = 0;
-      boolean swap = false;
+        boolean swap = false;
+        int passes = 0;
+        int comparisons = 0;
 
         for (int i = 0; i < sorted.length; i++){
             minimum = sorted[i];
+            passes++;
 
             for (int j = 0 + i; j < sorted.length; j++){
+                comparisons++;
 
                 if (sorted[j] < minimum){
 
@@ -35,10 +39,12 @@ public class InheritanceTax {
             temp = sorted[i];
             sorted[i] = minimum;
             sorted[location] = temp;
-
           }
         }// for i < sorted length
 
+        System.out.println("");
+        System.out.println(Integer.toString(passes) + " , " + Integer.toString(comparisons));
+        System.out.println("");
     }// subprogramme sort
 
     public void display(){
